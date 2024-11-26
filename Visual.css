@@ -1,0 +1,240 @@
+/*Gerais: 
+{
+*/
+*{
+    margin: 0;
+    padding: 0; /*Elimina bordas e margens, encaixando a página à beirada da tela*/
+}
+body{
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background-color: rgb(255, 255, 255);
+}
+a{
+    text-decoration: none;
+    color: white; /*Retira efeitos de linksm como sublinhados e cores diferentes*/
+}
+p{
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem; /*Cria espaçamento entre as linhas do texto exibido*/
+}
+header{
+    background-color: rgb(47, 194, 86);
+    height: 7rem; /*Define a altura do cabeçalho*/
+    position: relative;
+}
+main{
+    min-height: 100vh; /*Certifica que o main ocupa todo o espaço dedicado a ele. Se removido, o Footer irá subir, pois haverá espaço vago*/
+    padding: 1rem; /*Borda para que o texto não fique colado na margem*/
+}
+footer{
+    align-self: last baseline;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    background-color: rgb(47, 194, 86);
+    height: 7rem; /*Altura do rodapé*/
+}
+/*
+}
+*/
+
+
+
+.pag_atual{ /*O nome no topo da página, que indica em qual página estamos*/
+    padding: 10px;
+    font-size: 25px;
+    font-weight: bold;
+    color: white;
+    width: fit-content; /*A largura da div será apenas o necessário para encaixar o conteúdo*/
+}
+.Menu{
+    display: grid; /*Define o menu como grid (utilizado para fazer a disposição dos botões*/
+    grid-template-columns: auto auto auto auto auto; /*Define o espaço de cada um dos botões*/
+    grid-template-rows: auto; /*Limita a disposição a uma linha. Se removido, as opções serão alinhadas uma abaixo da outras, todas ao centro da página*/
+    background-color: rgb(18, 230, 146);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: auto;
+}
+.MenuItem{ /*Formatação das opções do Menu*/
+    font-size: 14px;
+    margin: 10px;
+    text-align: center;
+    color: white;
+}
+
+.Menu a:hover{
+    background-color: rgb(10, 95, 61);
+}
+.content{
+    display: flex;
+    flex-direction: column;
+}
+.icone{
+    width: 100px; /*Tamanho de imagem para icones como o perfil de aluno sem foto*/
+}
+.calendario{
+    width: fit-content;
+    height: fit-content;
+    align-items: center;
+}
+.conteiner_centralizado{
+    padding-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    gap: 1rem;
+}
+.aviso{
+    border-style: solid;
+    border-color: rgba(195, 193, 193, 0.878); /*Cor da borda*/
+    border-radius: 7px;
+    min-height: 7rem;
+    width: 50rem;
+    padding: 2em ;
+}
+.titulo_aviso{
+    font-weight: bold; /*Fonte negrito*/
+    width: fit-content; /*garante que o item ocupará apenas o espaço do conteúdo, ao invés da linha inteira*/
+}
+.data_aviso{
+    display: inline; /*Possibilita a inserção de mais de uma tag p na mesma linha (evita a quebra de linha)*/
+    width: fit-content;
+    padding-right: 3rem;
+}
+.anexo{
+    width: 2.5em;
+}
+.posicionamento_direitos{
+    padding-bottom: 0.1rem; /*sem um espaço, sobra uma pequena parte branca abaixo do rodapé, usada para encaixar partes de letras que passam abaixo da linha, como um 'p' ou 'ç'*/
+    display: flex;
+    height: 1em;
+    width: 100%;
+    align-self: last baseline; /*Alinha à última linha*/
+    justify-content: center; /*centraliza verticalmente à linha*/
+    align-items: center; /*centraliza horizontlmente à linha*/
+}
+#direitos_autorais{
+    width: fit-content;
+}   
+#botao_reclamacao{
+    position: fixed; /*Fixa o botão de reclamação conforme os parâmetros abaixo, independente do usuário rolar a tela*/
+    bottom: 0.3em;
+    right: 0.3em;
+    top: auto;
+    left: auto;
+    z-index: 100; /*Comando utilizado para definir qual item estará por cima na exibição, números menores que esse estarão abaixo, e vice-versa*/
+    /*ATENÇÃO, o comando z-index deve ser utilizado com cautela, pois o excesso pode atrapalhar o desempenho da página, a deixando pesada.*/
+}
+#botao_reclamacao img{
+    height: 40px;
+}
+#login_box{
+    padding: 2%;
+    width: 14em;
+    height: 15em;
+    align-items: center; 
+    border-style: solid; /*Borda lisa*/
+    border-color: rgba(195, 193, 193, 0.878); /*Cor da borda*/
+    border-radius: 5%;    /*Arredonda as quinas bas borda*/
+    display: flex; /*Para poder alterar a posição da caixa*/
+    justify-self: center;    /*Após o uso do display: flex, é utilizado para definir onde deve ficar o quadro, ao centro, nesse caso*/
+}
+#login_box input{
+    height: 1.5rem;
+    width: 13rem; 
+    border-radius: 7px 7px;
+    border-color: rgba(195, 193, 193, 0.878);
+    border-style: solid;
+}
+#login_box p{
+    color: rgb(47, 194, 86);
+}
+#login_box button{
+    width: 100%;
+    height: 2rem;
+    color: white;
+    font-weight: bold;
+    border-radius: 7px;
+    background-color:rgb(47, 194, 86);
+}
+#logout{
+    position: absolute; /*Para posicionar. Lembre-se que ele precisa estar dentro de um atributp pai que esteja definido como 'position: relative'*/
+    right: 0.5em;
+    top: 0;
+    padding: 0.5em;
+}
+#logout img{
+    width: 1.5em;
+}
+#recuperar_senha a{
+    color: black;
+    text-decoration: underline;
+}
+#recuperar_senha a:visited{
+    color: black;
+    text-decoration: underline;
+}
+.botao_add_evento {
+    margin-top: -10px;
+    color: green;
+}
+.classes{
+    .titulo_materia{
+        font-weight: bold;
+        font-size: 20px;
+        font-style: italic;
+    }
+    border-style: solid;
+    border-color: rgba(195, 193, 193, 0.878); /*Cor da borda*/
+    border-radius: 7px;
+    min-height: 7rem;
+    width: 50rem;
+    padding: 2em ;
+}
+
+.hora_inicio_materia{
+    display: inline; /*Possibilita a inserção de mais de uma tag p na mesma linha (evita a quebra de linha)*/
+    width: fit-content;
+    padding-right: 3rem;
+}
+.hora_final_materia{
+    display: inline; /*Possibilita a inserção de mais de uma tag p na mesma linha (evita a quebra de linha)*/
+    width: fit-content;
+    padding-right: 3rem;
+}
+
+.dia_home {
+    font-size: 50px;
+    width: 10px;
+    margin-top: 25px;
+    margin-left: 14vh;
+   
+}
+
+.aviso_principal_home{
+    font-size: 25px;
+    margin-top: -15%;
+    border-style: solid;
+    border-color: rgba(195, 193, 193, 0.878); /*Cor da borda*/
+    border-radius: 7px;
+    min-height: 5rem;
+    width: 30rem;
+    padding: 1rem;
+}
+.atv_dia_home{
+    font-size: 25px;
+    border-style: solid;
+    border-color: rgba(195, 193, 193, 0.878); /*Cor da borda*/
+    border-radius: 7px;
+    min-height: 5rem;
+    width: 30rem;
+    padding: 1rem;
+}
+.numero_atv {
+    font-size: 50px;
+    font-weight: bold;
+}
